@@ -3,7 +3,7 @@ let foodvalue = document.getElementById('food-value');
 let rentvalue = document.getElementById('rent-value');
 let clothesvalue = document.getElementById('clothes-value');
 
-//
+// balance
 let incomeBalance = document.getElementById('income-balance');
 let expensesBalance = document.getElementById('expenses-balance');
 let currentBalance = document.getElementById('balance');
@@ -31,12 +31,12 @@ function addMoney(currentAmount, newAmount, secondAmount, thirdAmount) {
   }
 
   function saving(){
-      const savings = incomeBalance.value / savingValue.value;
-      savingAmount.innerText = savings;
-
-     /* const totalBalance = addMoney(balance, savings);     
-      const remainingBalance = getMoney(balance, totalBalance);
-      remainingAmount.innerText = remainingBalance;*/
+      const savings = incomeBalance.value * savingValue.value;
+      const savingsAmount = savings / 100;
+      savingAmount.innerText = savingsAmount;
+   
+      const remainingBalance = getMoney(currentBalance.innerText, savingsAmount);
+      remainingAmount.innerText = remainingBalance;
 
 
 

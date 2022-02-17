@@ -9,17 +9,21 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="">
+    <!-- Header -->
     <header class="bg-blue-800 py-6 lg w-full sm:overflow-hidden">
-      <h1 class="text-center text-4xl font-bold drop-shadow-xl text-white"></h1>
+      <h1 class="text-center text-4xl font-bold drop-shadow-xl text-white">
         Wallet Assessments
       </h1>
     </header>
+    <!-- main -->
     <main class="bg-stone-100">
-      <section class="w-5/6 mx-auto py-16 lg:overflow-none sm:overflow-hidden">
+      <section class="w-5/6 mx-auto py-16">
         <div class="grid xl:grid-cols-2 sm:grid-row-2 gap-8 mx-auto">
-          <div class="m-auto drop-shadow-xl sm:overflow-hidden">
+          <!-- Image sise -->
+          <div class="m-auto drop-shadow-xl">
             <img class="rounded-3xl" src="images/money.jpg" alt="" />
           </div>
+          <!-- Balance side -->
           <div
             class="bg-blue-800 w-6/5 mx-auto drop-shadow-xl px-8 rounded-3xl py-8"
           >
@@ -30,12 +34,17 @@
               <h2 class="text-white font-semibold text-lg pr-1.5">Income:</h2>
               <input
                 id="income-balance"
-                class="bg-stone-100 border rounded-full pt-2 px-4 ml-2 w-3/4"
+                class="bg-stone-100 border rounded-full py-2 px-4 ml-2 w-3/4"
                 type="text"
               />
             </div>
-            <p id ="error-income" class="text-center mb-4 text-orange-700 font-semibold hidden ">Error: Please put valid input</p>
-            <h1 class="text-white text-center text-xl font-semibold mb-4">
+            <p
+              id="error-income"
+              class="text-center mb-4 text-orange-700 font-semibold hidden"
+            >
+              Error: Please put valid input
+            </p>
+            <h1 class="text-white text-center text-xl font-semibold mb-4 mt-8">
               Expenses
             </h1>
             <div class="flex items-center mb-4">
@@ -47,7 +56,12 @@
                 name=""
               />
             </div>
-            <p id ="error-food" class="text-center mb-4 text-orange-700 font-semibold hidden ">Error: Please put valid input</p>
+            <p
+              id="error-food"
+              class="text-center mb-4 text-orange-700 font-semibold hidden"
+            >
+              Error: Please put valid input
+            </p>
             <div class="flex items-center mb-4">
               <h2 class="text-white font-semibold text-lg pr-1.5">Rent:</h2>
               <input
@@ -56,7 +70,12 @@
                 type="text"
               />
             </div>
-            <p id ="error-rent" class="text-center mb-4 text-orange-700 font-semibold hidden ">Error: Please put valid input</p>
+            <p
+              id="error-rent"
+              class="text-center mb-4 text-orange-700 font-semibold hidden"
+            >
+              Error: Please put valid input
+            </p>
             <div class="flex items-center mb-4">
               <h2 class="text-white font-semibold text-lg pr-1.5">Clothes:</h2>
               <input
@@ -65,7 +84,12 @@
                 type="text"
               />
             </div>
-            <p id ="error-clothes" class="text-center mb-4 text-orange-700 font-semibold hidden ">Error: Please put valid input</p>
+            <p
+              id="error-clothes"
+              class="text-center mb-4 text-orange-700 font-semibold hidden"
+            >
+              Error: Please put valid input
+            </p>
             <button
               onclick="calculate()"
               class="ml-36 mb-4 py-2 px-8 bg-stone-300 text-blue-800 font-bold rounded-full"
@@ -80,12 +104,19 @@
                 >0</span
               >
             </p>
-            <p class="text-white text-center text-xl font-semibold mb-4">
+            <p
+              id="expenses-error"
+              class="text-center mb-2 text-orange-700 font-semibold hidden"
+            >
+              Error: You have not enough balance for expenses
+            </p>
+            <p class="text-white text-center text-xl font-semibold mb-1">
               Balance:
               <span id="balance" class="text-white text-xl font-semibold"
                 >0</span
               >
             </p>
+            <!-- Saveing part -->
             <div class="flex items-center mb-4">
               <h2 class="text-white font-semibold text-lg pr-1.5">Save:</h2>
               <input
@@ -101,7 +132,12 @@
                 Save
               </button>
             </div>
-            <p id ="suficient-amount" class="text-center mb-4 text-orange-700 font-semibold hidden ">Error: You have not Suficient Amount</p>
+            <p
+              id="suficient-amount"
+              class="text-center mb-4 text-orange-700 font-semibold hidden"
+            >
+              Error: You have not Suficient Amount
+            </p>
             <p class="text-white text-center text-xl font-semibold">
               Savings Amount:
               <span id="saving-amount" class="text-white text-xl font-semibold"

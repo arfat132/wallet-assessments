@@ -21,21 +21,31 @@ let errorClothes = document.getElementById('error-clothes');
 let expensesError = document.getElementById('expenses-error');
 let suficientAmount = document.getElementById('suficient-amount');
 
+//addition function
 function addAmount(currentAmount, newAmount, secondAmount, thirdAmount) {
   return Number(currentAmount) + Number(newAmount) + Number(secondAmount) + Number(thirdAmount);
 }
 
+//substract function
 function substractAmount(currentAmount, newAmount) {
+   if(currentAmount>newAmount){
   return Number(currentAmount) - Number(newAmount);
+ }
+else{
+    return ;
+}
 }
 
 // calculate button
 function calculate() {
-  const totalExpenses = addAmount(expensesBalance.innerText, foodvalue.value, rentvalue.value, clothesvalue.value);
-  expensesBalance.innerText = totalExpenses;
-
-  const balance = substractAmount(incomeBalance.value, totalExpenses);
-  currentBalance.innerText = balance;
+    const totalExpenses = addAmount(expensesBalance.innerText, foodvalue.value, rentvalue.value, clothesvalue.value);
+    if(incomeBalance.value>totalExpenses){
+    expensesBalance.innerText = totalExpenses;
+    const balance = substractAmount(incomeBalance.value, totalExpenses);
+    currentBalance.innerText = balance;
+    }else{
+    expensesError.style.display = 'block';
+    }
 
   //string error handle
   if (isNaN(incomeBalance.value)) {
@@ -68,11 +78,11 @@ function calculate() {
 
 //save button
 function saving() {
-  const savings = incomeBalance.value * savingValue.value;
-  const savingsAmount = savings / 100;
-  savingAmount.innerText = savingsAmount
+const savings = incomeBalance.value * savingValue.value;
+const savingsAmount = savings / 100;
+savingAmount.innerText = savingsAmount;
 
-  const remainingBalance = substractAmount(currentBalance.innerText, savingsAmount);
-  remainingAmount.innerText = remainingBalance;
-
+  //remaining balance 
+const remainingBalance = substractAmount(currentBalance.innerText, savingAmount.innerText);
+remainingAmount.innerText = remainingBalance;
 }
